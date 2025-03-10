@@ -46,12 +46,14 @@ export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-  const [newEvent, setNewEvent] = useState({
+
+  const [newEvent, setNewEvent] = useState<Event>({
+    id: Math.random().toString(36).substring(2, 9),
     title: "",
     date: "",
     location: "",
     description: "",
-    category: "Social" as const,
+    category: "Religious",
   });
 
   const filteredEvents =
@@ -84,17 +86,14 @@ export default function Events() {
       return;
     }
 
-    const event: Event = {
-      id: Math.random().toString(36).substr(2, 9),
-      ...newEvent,
-    };
-    setEvents([...events, event]);
+    setEvents([...events, newEvent]);
     setNewEvent({
+      id: "",
       title: "",
       date: "",
       location: "",
       description: "",
-      category: "Social",
+      category: "Religious",
     });
     setIsFormOpen(false);
     setFormErrors({});
@@ -298,12 +297,12 @@ export default function Events() {
                     </label>
                     <select
                       value={newEvent.category}
-                      onChange={(e) =>
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                         setNewEvent({
                           ...newEvent,
                           category: e.target.value as Event["category"],
-                        })
-                      }
+                        });
+                      }}
                       className="mt-1 block w-full rounded-sm border-gray-400 bg-sky-100 p-2 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                     >
                       <option value="Religious">Religious</option>

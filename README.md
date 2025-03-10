@@ -14,12 +14,11 @@ This project is a simple two-page React web app designed for managing and explor
    git clone https://github.com/Mobarak786/Internshala-frontend-assignment.git
    ```
 
-````
-2. _Change the directory:_
+2. _change the directory_
 
 ```base
    cd project-internshala
-````
+```
 
 3. _install dependencies:_
 
