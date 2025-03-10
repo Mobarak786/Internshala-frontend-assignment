@@ -115,7 +115,7 @@ export default function Events() {
           </motion.button>
         </div>
 
-        <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
+        <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

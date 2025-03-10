@@ -12,7 +12,7 @@ export default function Header() {
               </span>
             </Link>
           </div>
-          <div className="flex space-x-8">
+          <div className="flex space-x-2 md:space-x-8">
             <NavLink
               to="/"
               className={({ isActive }: { isActive: boolean }) =>
